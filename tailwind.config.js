@@ -9,8 +9,13 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ['var(--font-hightide)', ...fontFamily.serif],
-        sans: ['var(--font-montserrat)', ...fontFamily.sans],
-        base: ['var(--font-montserrat)', ...fontFamily.sans],
+        sans: [
+          'Helvetica Neue',
+          'Helvetica',
+          'Arial',
+          'Lucida Grande',
+          'sans-serif',
+        ],
       },
     },
     fontSize: {
@@ -27,6 +32,10 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+    },
+    colors: {
+      magenta: '#F80059',
+      ...require('tailwindcss/colors'),
     },
     typography: (theme) => ({
       invert: {

@@ -1,12 +1,5 @@
 import { useEffect, useRef } from 'react'
 
-import { Montserrat } from '@next/font/google'
-const montserrat = Montserrat({
-  weights: [400],
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-})
-
 import localFont from '@next/font/local'
 const highTide = localFont({
   src: '../../fonts/hightide.woff2',
@@ -32,9 +25,7 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <div className="relative">
-        <main
-          className={`${highTide.variable} font-display ${montserrat.variable} font-sans`}
-        >
+        <main className={`${highTide.variable} font-display`}>
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
       </div>
