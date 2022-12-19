@@ -1,7 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { ContactModal } from '@/components/ContactModal'
+import { useState } from 'react'
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <>
       <Head>
@@ -129,9 +133,9 @@ export default function Home() {
           </h3>
           <Image
             src={'/assets/wedding.png'}
-            width={800}
+            width={900}
             height={900}
-            className="mb-10"
+            className="mx-auto mb-10"
           />
           <p className="mb-10 w-full font-sans text-lg">
             <b>STAY IN THE MIX.</b> You want the music at your wedding and
@@ -154,9 +158,9 @@ export default function Home() {
           </h3>
           <Image
             src={'/assets/events.png'}
-            width={800}
+            width={900}
             height={900}
-            className="mb-10"
+            className="mx-auto mb-10"
           />
           <p className="mb-10 w-full font-sans text-lg">
             <b>A SIMPLE CHOICE.</b> Instead of offering a bunch of package
@@ -179,6 +183,14 @@ export default function Home() {
         <button className="rounded-full border border-black px-10 py-2 font-sans text-2xl font-bold uppercase hover:border-magenta hover:bg-magenta hover:text-white">
           Contact
         </button>
+      </div>
+
+      {/* Footer */}
+      <div className="mx-auto mt-2 border-t p-5 md:p-10">
+        <div className="flex w-full flex-col items-center justify-between space-y-10 md:flex-row md:space-y-0">
+          <Image src={'/assets/footer-logo.png'} width={300} height={200} />
+          <Image src={'/assets/awards.png'} width={400} height={300} />
+        </div>
       </div>
     </>
   )
