@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { ContactModal } from '@/components/ContactModal'
-import { useState } from 'react'
+import Link from 'next/link'
+import { Footer } from '@/components/Footer'
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useState(false)
-
   return (
     <>
       <Head>
@@ -25,9 +23,11 @@ export default function Home() {
           another level, putting his heart and soul into making your celebration
           a success.
         </p>
-        <button className="self-end font-sans text-2xl font-medium hover:text-magenta md:self-start">
-          Contact
-        </button>
+        <Link href="/contact">
+          <button className="self-end font-sans text-2xl font-medium hover:text-magenta md:self-start">
+            Contact
+          </button>
+        </Link>
       </div>
 
       {/* Logo */}
@@ -180,18 +180,15 @@ export default function Home() {
 
       {/* Contact button */}
       <div className="mx-auto mt-2 flex max-w-screen-xl justify-center p-20 uppercase">
-        <button className="rounded-full border border-black px-10 py-2 font-sans text-2xl font-bold uppercase hover:border-magenta hover:bg-magenta hover:text-white">
-          Contact
-        </button>
+        <Link href="/contact">
+          <button className="rounded-full border border-black px-10 py-2 font-sans text-2xl font-bold uppercase hover:border-magenta hover:bg-magenta hover:text-white">
+            Contact
+          </button>
+        </Link>
       </div>
 
       {/* Footer */}
-      <div className="mx-auto mt-2 border-t p-5 md:p-10">
-        <div className="flex w-full flex-col items-center justify-between space-y-10 md:flex-row md:space-y-0">
-          <Image src={'/assets/footer-logo.png'} width={300} height={200} />
-          <Image src={'/assets/awards.png'} width={400} height={300} />
-        </div>
-      </div>
+      <Footer />
     </>
   )
 }
