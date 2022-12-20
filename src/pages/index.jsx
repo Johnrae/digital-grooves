@@ -3,6 +3,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Footer } from '@/components/Footer'
 
+const Testimonial = ({ name, body, rating }) => {
+  return (
+    <div className="space-y-2 font-sans">
+      <h2 className="text-lg font-medium">{name}</h2>
+      <div className="flex flex-row space-x-2">
+        {new Array(rating).fill(null).map(() => {
+          return <div className="h-5 w-5 rounded-full bg-magenta" />
+        })}
+      </div>
+      <p>{body}</p>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <>
@@ -175,6 +189,27 @@ export default function Home() {
             We figure there are a lot of other decisions you have to make, so
             there is no need to burden you with another.
           </p>
+        </div>
+      </div>
+
+      <div className="px-5 py-20 sm:px-10">
+        <h2 className="mb-10 font-sans text-2xl">Testimonials</h2>
+        <div className="grid gap-10  sm:grid-cols-2 md:grid-cols-3">
+          <Testimonial
+            name="John Smith"
+            body="Bill Bowen did a fanstastic job for us"
+            rating={4}
+          />
+          <Testimonial
+            name="John Smith"
+            body="Bill Bowen did a fanstastic job for us"
+            rating={5}
+          />
+          <Testimonial
+            name="John Smith"
+            body="Bill Bowen did a fanstastic job for us"
+            rating={5}
+          />
         </div>
       </div>
 
