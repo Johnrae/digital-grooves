@@ -54,11 +54,14 @@ export default function Contact() {
             className="h-full w-full"
           />
         </div>
-        <div className="w-full bg-white p-5 font-sans lg:w-1/2">
+        <div className="w-full bg-white p-5 font-sans md:p-10 lg:w-1/2">
           <div className="flex flex-row items-center justify-between">
             <Image src="/assets/logo-black.svg" width={250} height={50} />
 
-            <Link href="/" className="block text-2xl hover:text-magenta">
+            <Link
+              href="/"
+              className="block text-2xl font-medium hover:text-magenta"
+            >
               Close
             </Link>
           </div>
