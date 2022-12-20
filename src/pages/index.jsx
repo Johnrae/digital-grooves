@@ -52,7 +52,7 @@ export default function Home() {
       </div>
 
       {/* Main image */}
-      <div className="relative h-[50rem] blur-[1px]">
+      <div className="relative h-[50rem]">
         <Image
           src="/assets/HeaderPhoto.png"
           fill
