@@ -8,8 +8,12 @@ const Testimonial = ({ name, body, rating }) => {
     <div className="space-y-2 font-sans">
       <h2 className="text-lg font-medium">{name}</h2>
       <div className="flex flex-row space-x-2">
-        {new Array(rating).fill(null).map(() => {
-          return <div className="h-5 w-5 rounded-full bg-magenta" />
+        {new Array(rating).fill(null).map((_, i) => {
+          return (
+            <div key={i} className="h-[30px] w-[30px]">
+              <Image src="/assets/star.svg" alt="star" height={30} width={30} />
+            </div>
+          )
         })}
       </div>
       <p>{body}</p>
@@ -193,21 +197,23 @@ export default function Home() {
       </div>
 
       <div className="px-5 py-20 sm:px-10">
-        <h2 className="mb-10 font-sans text-2xl">Testimonials</h2>
+        <h2 className="mb-10 font-display text-8xl text-magenta md:text-center">
+          Testimonials
+        </h2>
         <div className="grid gap-10  sm:grid-cols-2 md:grid-cols-3">
           <Testimonial
-            name="John Smith"
-            body="Bill Bowen did a fanstastic job for us"
-            rating={4}
-          />
-          <Testimonial
-            name="John Smith"
-            body="Bill Bowen did a fanstastic job for us"
+            name="Natasha L."
+            body="We hired Digital Grooves for our backyard wedding July 2015. The whole experience from start to end was excellent. He is a very patient, professional and calming person. The sound system was impressive and all the transitions flowed perfectly. He was very attentive and flexible when we were unorganized and indecisive during the reception. On top of that the price was right....very impressed and would definitely hire him again"
             rating={5}
           />
           <Testimonial
-            name="John Smith"
-            body="Bill Bowen did a fanstastic job for us"
+            name="John S."
+            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis, orci non bibendum lacinia, dui nunc congue turpis, nec sagittis augue libero nec leo. Duis ut pharetra mauris. Ut suscipit convallis risus. "
+            rating={4}
+          />
+          <Testimonial
+            name="Jim J."
+            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis, orci non bibendum lacinia, dui nunc congue turpis, nec sagittis augue libero nec leo. Duis ut pharetra mauris. Ut suscipit convallis risus. "
             rating={5}
           />
         </div>
